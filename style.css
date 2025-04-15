@@ -1,4 +1,3 @@
-/* Base Reset & Fonts */
 /* Global styles */
 * {
     margin: 0;
@@ -15,7 +14,7 @@ body {
     line-height: 1.6;
     background: #f5f7fa;
     color: #333;
-    padding-top: 80px; /* Espace pour la barre de navigation fixe */
+    padding-top: 100px; /* Augmenter l'espace réservé en haut pour la barre de navigation fixe */
 }
 
 /* Navigation */
@@ -30,53 +29,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    z-index: 1000;
+    z-index: 9999;  /* Assurer que le menu soit toujours au-dessus */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Eviter que le contenu soit caché derrière la barre */
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logo-container img {
-    height: 40px;
-}
-
-.logo-container strong {
-    font-size: 1.2rem;
-}
-
-.logo-container span {
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-.nav-buttons {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-buttons a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-buttons a:hover {
-    color: #3fc1c9;
 }
 
 /* Hero Section */
 .hero {
     background: linear-gradient(120deg, #0a3d62, #00aaff);
     color: white;
-    padding: 6rem 2rem; /* Ajout de padding pour un affichage plus spacieux */
+    padding: 6rem 2rem; /* Augmenter la taille de padding pour le contenu hero */
     text-align: center;
+    min-height: 80vh; /* S'assurer que la section prend une grande partie de l'écran */
 }
 
 .hero-content h1 {
@@ -189,6 +152,7 @@ body {
         padding: 0.6rem 1.2rem;
     }
 }
+
 
 
 /* === Contact Page === */
