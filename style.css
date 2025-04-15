@@ -1,37 +1,44 @@
 /* Base Reset & Fonts */
-/* === Global Settings === */
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f7fa;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
+    background: #f5f7fa;
+    color: #333;
+    padding-top: 80px; /* Espace pour la barre de navigation fixe */
 }
 
-/* === Navigation Bar === */
+/* Navigation */
 .top-nav {
-    background-color: #0a3d62;
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0d1b2a;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Eviter que le contenu soit caché derrière la barre */
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
 }
 
 .logo-container img {
@@ -39,14 +46,12 @@ body {
 }
 
 .logo-container strong {
-    font-size: 1.4rem;
-    color: #00aaff;
-    margin-right: 4px;
+    font-size: 1.2rem;
 }
 
 .logo-container span {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
 .nav-buttons {
@@ -55,36 +60,33 @@ body {
     gap: 1.5rem;
 }
 
-.nav-buttons li a {
+.nav-buttons a {
+    color: #fff;
     text-decoration: none;
-    color: white;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-buttons li a:hover {
-    color: #00d2ff;
+.nav-buttons a:hover {
+    color: #3fc1c9;
 }
 
-/* === Hero Section === */
+/* Hero Section */
 .hero {
     background: linear-gradient(120deg, #0a3d62, #00aaff);
     color: white;
-    padding: 4rem 2rem;
+    padding: 6rem 2rem; /* Ajout de padding pour un affichage plus spacieux */
     text-align: center;
-    animation: fadeIn 1.5s ease;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    animation: slideInDown 1s ease;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    animation: slideInDown 1.5s ease;
 }
 
 .hero .cta-button {
@@ -93,7 +95,7 @@ body {
     font-weight: bold;
 }
 
-/* === Sections === */
+/* Main Content */
 .main-content {
     padding: 2rem;
     max-width: 1200px;
@@ -101,17 +103,7 @@ body {
     text-align: center;
 }
 
-section {
-    margin-bottom: 4rem;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #0a3d62;
-}
-
-/* === Service & Package Cards === */
+/* Service & Package Sections */
 .services-container,
 .packages-container {
     display: grid;
@@ -142,9 +134,8 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* === Buttons === */
-.cta-button,
-.submit-button {
+/* Buttons */
+.cta-button {
     display: inline-block;
     background: linear-gradient(45deg, #00aaff, #0077cc);
     color: white;
@@ -158,11 +149,47 @@ h2 {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.cta-button:hover,
-.submit-button:hover {
+.cta-button:hover {
     background: linear-gradient(45deg, #0099cc, #005fa3);
     transform: scale(1.05);
 }
+
+/* Footer */
+.bottom-bar {
+    background-color: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .services-container,
+    .packages-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
 
 /* === Contact Page === */
 .contact-page {
